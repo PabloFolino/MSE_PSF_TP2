@@ -1,4 +1,4 @@
-psf/TP1_pru/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_circularBuffer.o: \
+psf/TP2/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_circularBuffer.o: \
  libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_circularBuffer.c \
  libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_circularBuffer.h \
  libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \

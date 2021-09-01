@@ -1,4 +1,4 @@
-psf/TP1_pru/out/libs/plc//src/PLC_OperatingSystem.o: \
+psf/TP2/out/libs/plc//src/PLC_OperatingSystem.o: \
  libs/plc//src/PLC_OperatingSystem.c \
  libs/plc//inc/PLC_ElementaryDataTypes.h libs/plc//inc/PLC_Services.h \
  libs/plc//inc/PLC_StandardCDataTypes.h libs/plc//inc/PLC_Hardware.h \

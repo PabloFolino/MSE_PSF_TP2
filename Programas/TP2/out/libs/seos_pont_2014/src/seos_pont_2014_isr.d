@@ -1,4 +1,4 @@
-psf/TP1_pru/out/libs/seos_pont_2014//src/seos_pont_2014_isr.o: \
+psf/TP2/out/libs/seos_pont_2014//src/seos_pont_2014_isr.o: \
  libs/seos_pont_2014//src/seos_pont_2014_isr.c \
  libs/seos_pont_2014//inc/seos_pont_2014_isr.h \
  libs/sapi/sapi_v0.5.2/base/inc/sapi.h \

@@ -1,105 +1,149 @@
-#include "arm_math.h"
 #include "sapi.h"
+#include "arm_math.h"
+#include "arm_const_structs.h"
+//#include "fir_500.h" 
+#include "fir.h" //Posee un M=129
 
-#define SCT_PWM_PIN_LED 2
-#define SCT_PWM_LED 2
-#define SCT_ADC_PIN_OUT 8
-#define SCT_ADC_OUT 1
-#define ADC_FRAME_SAMPLES 128
-#define ADC_TIGGER_VALUE 512
-#define ADC_SAMPLE_RATE 10000
-#define ADC_BITS 10
+//N? / 129+N-1=256  --> N=128
+//
+
+#define BITS    10   // cantidad de bits usado para cuantizar
+
+#define CUTFREC 	3000 	// Frecuencia de corte superior del filtro
+#define CUTFREC2	0		// Frecuencia de corte inferior del filtro
+#define FS			8000
+
+#define NIVEL_SENIAL 1		// Umbral de ruido
 
 struct header_struct {
-    char pre[8];
-    uint32_t id;
-    uint16_t N;
-    uint16_t fs;
-    uint32_t maxIndex;
-    uint32_t minIndex;
-    q15_t maxValue;
-    q15_t minValue;
-    q15_t rms;
-    char pos[4];
-} __attribute__((packed)) header = {
-    "*header*", 0, ADC_FRAME_SAMPLES, ADC_SAMPLE_RATE, 0, 0, 0, 0, 0, "end*"};
+   char     pre[8];
+   uint32_t id;
+   uint16_t N;
+   uint16_t fs ;
+   uint16_t cutFrec ;
+   uint16_t cutFrec2 ;
+   uint16_t senial ;
+   uint16_t M ;
+   char     pos[4];
+} __attribute__ ((packed)); //importante para que no paddee
 
-int16_t adc[ADC_FRAME_SAMPLES];
-volatile uint16_t index;
+struct header_struct header={"*header*",0,128,FS,CUTFREC,CUTFREC2,ON,h_LENGTH,"end*"};
 
-void ADC0_IRQHandler(void) {
-    static enum {
-        ESPERANDO_MENOR,
-        ESPERANDO_MAYOR,
-        MUESTREANDO,
-    } estado = ESPERANDO_MENOR;
-    uint16_t sample;
+void trigger(int16_t threshold)/*{{{*/
+{
+   while((adcRead(CH1)-512)>threshold)
+      ;
+   while((adcRead(CH1)-512)<threshold)
+      ;
+   return;
+}/*}}}*/
+void init_cfft_instance(arm_cfft_instance_q15* CS,int length)/*{{{*/
+{
+   switch(length){
+      case 16:
+         *CS=arm_cfft_sR_q15_len16;
+         break;
+      case 32:
+         *CS=arm_cfft_sR_q15_len32;
+         break;
+      case 64:
+         *CS=arm_cfft_sR_q15_len64;
+         break;
+      case 128:
+         *CS=arm_cfft_sR_q15_len128;
+         break;
+      case 256:
+         *CS=arm_cfft_sR_q15_len256;
+         break;
+      case 512:
+         *CS=arm_cfft_sR_q15_len512;
+         break;
+      case 1024:
+         *CS=arm_cfft_sR_q15_len1024;
+         break;
+      case 2048:
+         *CS=arm_cfft_sR_q15_len2048;
+         break;
+      case 4096:
+         *CS=arm_cfft_sR_q15_len4096;
+         break;
+      default:
+         *CS=arm_cfft_sR_q15_len128;
+   }
+   return;
+}/*}}}*/
 
-    Chip_ADC_ReadValue(LPC_ADC0, ADC_CH1, &sample);
+int main ( void ) {
+   uint16_t sample = 0;
+   arm_cfft_instance_q15 CS;
+   q15_t fftInOut[ ( header.N+h_LENGTH-1 )*2 ];//
+   q15_t fftAbs  [ ( header.N+h_LENGTH-1 )*1 ]; //
+   int16_t adc   [ ( header.N+h_LENGTH-1 )*1 ];
 
-    if (index == 0) {
-        if (estado == MUESTREANDO) estado = ESPERANDO_MENOR;
-        switch (estado) {
-            case ESPERANDO_MENOR:
-                if (sample < ADC_TIGGER_VALUE) estado = ESPERANDO_MAYOR;
-                break;
-            case ESPERANDO_MAYOR:
-                if (sample > ADC_TIGGER_VALUE) estado = MUESTREANDO;
-                break;
-            default:
-                break;
-        }
-    }
-    if (estado == MUESTREANDO) {
-        adc[index] = (((sample - 512)) >> (10 - ADC_BITS)) << (6 + (10 - ADC_BITS));
-        index++;
-    }
-    gpioToggle(LED1);  // este led blinkea a fs/2
-}
 
-void adc_init(void) {
-    ADC_CLOCK_SETUP_T adc;
+   for(sample=header.N;sample<(header.N+h_LENGTH-1);sample++){ //relleno con ceros M-1 puntos
+      adc[sample]          = 0; //como son automaticas no se inicializan en cero, podrian definirse globales para que arranquen en cero
+      fftInOut[sample*2]   = 0;
+      fftInOut[sample*2+1] = 0;                                                            // parte imaginaria cero
+   }
 
-    Chip_ADC_Init(LPC_ADC0, &adc);
-    Chip_ADC_EnableChannel(LPC_ADC0, ADC_CH1, ENABLE);
+//lo puedo calcular aqui o lo tomo desde pytho previamente cocinado
+//   arm_cmplx_mag_squared_q15 ( H ,HAbs ,(header.N+h_LENGTH-1 ));
 
-    Chip_ADC_SetStartMode(LPC_ADC0, ADC_START_ON_CTOUT8, ADC_TRIGGERMODE_FALLING);
-    NVIC_EnableIRQ(ADC0_IRQn);
-}
+   boardConfig       (                          );
+   uartConfig        ( UART_USB ,460800         );
+   adcConfig         ( ADC_ENABLE               );
+   //dacConfig       ( DAC_ENABLE               );
+   cyclesCounterInit ( EDU_CIAA_NXP_CLOCK_SPEED );
 
-void sct_init(void) {
-    uint16_t dutty = Chip_SCTPWM_GetTicksPerCycle(LPC_SCT) / 2;
+   header.senial=false;			// Se usa para verificar si hay ruido a partir de un nivel --> NIVEL_RUIDO
 
-    Chip_SCTPWM_Init(LPC_SCT);
-    Chip_SCTPWM_SetRate(LPC_SCT, ADC_SAMPLE_RATE);
+   while(1) {
+      cyclesCounterReset();
 
-    Chip_SCTPWM_SetOutPin(LPC_SCT, SCT_ADC_OUT, SCT_ADC_PIN_OUT);
-    Chip_SCTPWM_SetDutyCycle(LPC_SCT, SCT_ADC_OUT, dutty);
+      adc[sample]          = (((int16_t )adcRead(CH1)-512)>>(10-BITS))<<(6+10-BITS); // PISA el sample que se acaba de mandar con una nueva muestra
+      fftInOut[sample*2]   = adc[sample];                                            // copia del adc porque la fft corrompe el arreglo de entrada
+      fftInOut[sample*2+1] = 0;                                                      // parte imaginaria cero
 
-    Chip_SCTPWM_Start(LPC_SCT);
-}
+      if(header.senial==true){
+     	 header.senial=false;
+     	 gpioToggle ( LED2 );
+      }
 
-int main(void) {
-    boardConfig();
-    uartConfig(UART_USB, 460800);
+      if ( ++sample>=header.N ) {
+         gpioToggle ( LEDR );                         // este led blinkea a fs/N
 
-    adc_init();
-    sct_init();
+//------------TRANSFORMADA------------------
+         init_cfft_instance ( &CS,(header.N+h_LENGTH-1)); //512. 256 esto tienen que ser power of 2
+         arm_cfft_q15       ( &CS ,fftInOut ,0 ,1      ) ;
 
-    while (1) {
-        index = 0;
-        Chip_ADC_Int_SetChannelCmd(LPC_ADC0, ADC_CH1, ENABLE);
-        while (index < header.N) {
-            __WFI();
-        };
-        Chip_ADC_Int_SetChannelCmd(LPC_ADC0, ADC_CH1, DISABLE);
+//------------MAGNITUD------------------
+         arm_cmplx_mag_squared_q15 ( fftInOut ,fftAbs ,(header.N+h_LENGTH-1 ));
 
-        gpioToggle(LED2);
-        arm_max_q15(adc, header.N, &header.maxValue, &header.maxIndex);
-        arm_min_q15(adc, header.N, &header.minValue, &header.minIndex);
-        arm_rms_q15(adc, header.N, &header.rms);
-        header.id++;
-        uartWriteByteArray(UART_USB, (uint8_t *)&header, sizeof(header));
-        uartWriteByteArray(UART_USB, (uint8_t *)adc, sizeof(adc));
-    }
+//------------FILTRADO MULTIPLICANDO ESPECTROS------------------
+         arm_mult_q15 ( fftAbs,HAbs ,fftAbs ,(header.N+h_LENGTH-1));
+
+         for (uint16_t i=0; i<(header.N+h_LENGTH-1);i++ ) {
+        	 if(NIVEL_SENIAL<fftAbs[i]) {
+        		 header.senial=true;
+        	 }
+         }
+
+
+		 header.id++;
+		 uartWriteByteArray ( UART_USB ,(uint8_t*)&header ,sizeof(struct header_struct ));
+
+		 for (sample=0; sample<(header.N+h_LENGTH-1);sample++ ) {
+			uartWriteByteArray ( UART_USB ,(uint8_t* )&adc[sample]      ,sizeof(adc[0]) );     // envia el sample ANTERIOR
+			uartWriteByteArray ( UART_USB ,(uint8_t* )&fftAbs[sample*1] ,sizeof(fftInOut[0])); // envia la fft del sample ANTERIO
+		 }
+
+         sample = 0;
+         adcRead(CH1); //why?? hay algun efecto minimo en el 1er sample.. puede ser por el blinkeo de los leds o algo que me corre 10 puntos el primer sample. Con esto se resuelve.. habria que investigar el problema en detalle
+
+      }
+     // gpioToggle ( LED1 );                                           // este led blinkea a fs/2
+      while(cyclesCounterRead()< EDU_CIAA_NXP_CLOCK_SPEED/header.fs) // el clk de la CIAA es 204000000
+         ;
+   }
 }

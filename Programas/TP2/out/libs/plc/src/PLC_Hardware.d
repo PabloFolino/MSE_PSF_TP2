@@ -1,6 +1,6 @@
-psf/TP1_pru/out/libs/plc//src/PLC_Hardware.o: \
- libs/plc//src/PLC_Hardware.c libs/plc//inc/PLC_StandardCDataTypes.h \
- libs/plc//inc/PLC_Hardware.h libs/sapi/sapi_v0.5.2/base/inc/sapi.h \
+psf/TP2/out/libs/plc//src/PLC_Hardware.o: libs/plc//src/PLC_Hardware.c \
+ libs/plc//inc/PLC_StandardCDataTypes.h libs/plc//inc/PLC_Hardware.h \
+ libs/sapi/sapi_v0.5.2/base/inc/sapi.h \
  libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \
  libs/lpc_open/lpc_chip_43xx/inc/chip.h \
  libs/lpc_open/lpc_chip_43xx/inc/sys_config.h \

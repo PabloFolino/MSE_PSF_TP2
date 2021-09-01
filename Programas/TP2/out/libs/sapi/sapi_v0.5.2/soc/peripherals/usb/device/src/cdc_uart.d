@@ -1,4 +1,4 @@
-psf/TP1_pru/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/cdc_uart.o: \
+psf/TP2/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/cdc_uart.o: \
  libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/cdc_uart.c \
  libs/lpc_open/boards/edu_ciaa_nxp/inc/board.h \
  libs/lpc_open/lpc_chip_43xx/inc/chip.h \

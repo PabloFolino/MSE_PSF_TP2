@@ -1,4 +1,4 @@
-psf/TP1_pru/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o: \
+psf/TP2/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o: \
  libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.c \
  libs/sapi/sapi_v0.5.2/soc/core/inc/sapi_cyclesCounter.h \
  libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \

@@ -1,4 +1,4 @@
-psf/TP1_pru/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/usbd_keyboard.o: \
+psf/TP2/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/usbd_keyboard.o: \
  libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/usbd_keyboard.c \
  libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/inc/usbd_keyboard.h \
  libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/inc/lpc_app_usbd_cfg.h \

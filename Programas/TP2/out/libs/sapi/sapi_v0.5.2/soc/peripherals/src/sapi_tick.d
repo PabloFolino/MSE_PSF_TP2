@@ -1,4 +1,4 @@
-psf/TP1_pru/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o: \
+psf/TP2/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o: \
  libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.c \
  libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_tick.h \
  libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \

@@ -1,4 +1,4 @@
-psf/TP1_pru/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o: \
+psf/TP2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o: \
  libs/lpc_open/boards/edu_ciaa_nxp/src/board.c \
  libs/lpc_open/boards/edu_ciaa_nxp/inc/board.h \
  libs/lpc_open/lpc_chip_43xx/inc/chip.h \

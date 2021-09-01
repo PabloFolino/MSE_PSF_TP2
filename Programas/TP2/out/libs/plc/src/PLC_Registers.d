@@ -1,6 +1,5 @@
-psf/TP1_pru/out/libs/plc//src/PLC_Registers.o: \
- libs/plc//src/PLC_Registers.c libs/plc//inc/PLC_Registers.h \
- libs/plc//inc/PLC_1KByteStructures.h \
+psf/TP2/out/libs/plc//src/PLC_Registers.o: libs/plc//src/PLC_Registers.c \
+ libs/plc//inc/PLC_Registers.h libs/plc//inc/PLC_1KByteStructures.h \
  libs/plc//inc/PLC_ElementaryDataTypes.h libs/plc//inc/PLC_Services.h \
  libs/plc//inc/PLC_StandardCDataTypes.h libs/plc//inc/PLC_Hardware.h \
  libs/sapi/sapi_v0.5.2/base/inc/sapi.h \

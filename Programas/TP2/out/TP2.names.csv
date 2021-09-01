@@ -1,0 +1,248 @@
+psf/TP2/out/TP2.elf:1a0005d4 00000044 t Board_LED_Init
+psf/TP2/out/TP2.elf:1a000618 00000040 t Board_TEC_Init
+psf/TP2/out/TP2.elf:1a000658 00000040 t Board_GPIO_Init
+psf/TP2/out/TP2.elf:1a000698 00000030 t Board_ADC_Init
+psf/TP2/out/TP2.elf:1a0006c8 00000038 t Board_SPI_Init
+psf/TP2/out/TP2.elf:1a000700 00000024 t Board_I2C_Init
+psf/TP2/out/TP2.elf:1a0026a4 00000008 t GpioButtons
+psf/TP2/out/TP2.elf:1a0026ac 0000000c t GpioLeds
+psf/TP2/out/TP2.elf:1a0026b8 00000012 t GpioPorts
+psf/TP2/out/TP2.elf:1a0026d0 00000004 t InitClkStates
+psf/TP2/out/TP2.elf:1a0026d4 00000074 t pinmuxing
+psf/TP2/out/TP2.elf:10000220 00000038 d i2c
+psf/TP2/out/TP2.elf:1a0008ac 0000002c t Chip_UART_GetIndex
+psf/TP2/out/TP2.elf:1a002748 00000008 t UART_BClock
+psf/TP2/out/TP2.elf:1a002750 00000008 t UART_PClock
+psf/TP2/out/TP2.elf:1a000a48 00000014 t Chip_ADC_GetClockIndex
+psf/TP2/out/TP2.elf:1a000a5c 00000032 t getClkDiv
+psf/TP2/out/TP2.elf:1a000c28 000000a0 t pll_calc_divs
+psf/TP2/out/TP2.elf:1a000cc8 0000010c t pll_get_frac
+psf/TP2/out/TP2.elf:1a000dd4 0000004c t Chip_Clock_FindBaseClock
+psf/TP2/out/TP2.elf:1a001048 00000022 t Chip_Clock_GetDivRate
+psf/TP2/out/TP2.elf:10000268 00000008 b audio_usb_pll_freq
+psf/TP2/out/TP2.elf:1a002764 0000006c t periph_to_base
+psf/TP2/out/TP2.elf:1a0027d0 00000048 t InitClkStates
+psf/TP2/out/TP2.elf:1a001344 00000014 t Chip_SSP_GetClockIndex
+psf/TP2/out/TP2.elf:1a001358 00000018 t Chip_SSP_GetPeriphClockIndex
+psf/TP2/out/TP2.elf:10000258 00000004 d ClockSpeed
+psf/TP2/out/TP2.elf:1a002818 00000048 t lpcUarts
+psf/TP2/out/TP2.elf:10000270 00000004 b callBackFuncParams
+psf/TP2/out/TP2.elf:10000278 00000008 b tickCounter
+psf/TP2/out/TP2.elf:10000280 00000004 b tickHookFunction
+psf/TP2/out/TP2.elf:1a0016fc 00000034 t gpioObtainPinInit
+psf/TP2/out/TP2.elf:10000284 00000004 b g_hUsb
+psf/TP2/out/TP2.elf:1a001cb0 t arm_bitreversal_32_0
+psf/TP2/out/TP2.elf:1a001d1a t arm_bitreversal_16_0
+psf/TP2/out/TP2.elf:1a00c7ac t __init_array_end
+psf/TP2/out/TP2.elf:1a00c7a8 b __preinit_array_end
+psf/TP2/out/TP2.elf:1a00c7a8 t __init_array_start
+psf/TP2/out/TP2.elf:1a00c7a8 b __preinit_array_start
+psf/TP2/out/TP2.elf:1a000e6c 0000001c T Chip_Clock_GetDividerSource
+psf/TP2/out/TP2.elf:1a009e10 000000c0 T twiddleCoef_64_q15
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W TIMER2_IRQHandler
+psf/TP2/out/TP2.elf:1a00150e 0000001c T uartWriteByteArray
+psf/TP2/out/TP2.elf:1a000184 00000002 W DebugMon_Handler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W RIT_IRQHandler
+psf/TP2/out/TP2.elf:1a000af4 00000016 T Chip_ADC_DeInit
+psf/TP2/out/TP2.elf:1a080000 A __top_MFlashA512
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W ADCHS_IRQHandler
+psf/TP2/out/TP2.elf:1a000114 T __section_table_start
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W FLASH_EEPROM_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W I2C0_IRQHandler
+psf/TP2/out/TP2.elf:1a006de0 00003000 T twiddleCoef_4096_q15
+psf/TP2/out/TP2.elf:1a000778 00000008 T __stdio_init
+psf/TP2/out/TP2.elf:1a00017a 00000002 W HardFault_Handler
+psf/TP2/out/TP2.elf:1a000000 A __vectors_start__
+psf/TP2/out/TP2.elf:1a000bbc 0000000c T Chip_ADC_SetResolution
+psf/TP2/out/TP2.elf:1a0015c0 0000002c T SysTick_Handler
+psf/TP2/out/TP2.elf:1a00092c 00000040 T Chip_UART_SetBaud
+psf/TP2/out/TP2.elf:1a000544 00000002 W initialise_monitor_handles
+psf/TP2/out/TP2.elf:1a001b1c 000000c6 T arm_cfft_radix4by2_inverse_q15
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W SDIO_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W ATIMER_IRQHandler
+psf/TP2/out/TP2.elf:1a000186 00000002 W PendSV_Handler
+psf/TP2/out/TP2.elf:1a000178 00000002 W NMI_Handler
+psf/TP2/out/TP2.elf:1a00c7b4 R __exidx_end
+psf/TP2/out/TP2.elf:1a000150 T __data_section_table_end
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W I2C1_IRQHandler
+psf/TP2/out/TP2.elf:1a00c558 000001e0 T armBitRevIndexTable_fixed_256
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W UART1_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GPIO5_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W CAN1_IRQHandler
+psf/TP2/out/TP2.elf:1a002960 00000010 T arm_cfft_sR_q15_len128
+psf/TP2/out/TP2.elf:53ff7346 A __valid_user_code_checksum
+psf/TP2/out/TP2.elf:1a001d60 0000025a T arm_radix4_butterfly_q15
+psf/TP2/out/TP2.elf:1a00c7b4 R _etext
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W USB1_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W I2S0_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W TIMER3_IRQHandler
+psf/TP2/out/TP2.elf:1a0010ea 0000000c T Chip_Clock_GetBaseClocktHz
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W UART0_IRQHandler
+psf/TP2/out/TP2.elf:1a0029c0 00000010 T arm_cfft_sR_q15_len16
+psf/TP2/out/TP2.elf:1a0001a8 00000012 T bss_init
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W SGPIO_IRQHandler
+psf/TP2/out/TP2.elf:1a001d0a T arm_bitreversal_16
+psf/TP2/out/TP2.elf:1a002344 T __aeabi_uldivmod
+psf/TP2/out/TP2.elf:10000290 ? _noinit
+psf/TP2/out/TP2.elf:10000288 00000004 B SystemCoreClock
+psf/TP2/out/TP2.elf:1a0008d8 00000054 T Chip_UART_Init
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W ADC0_IRQHandler
+psf/TP2/out/TP2.elf:1a000a9c 00000018 T readAdcVal
+psf/TP2/out/TP2.elf:1a000180 00000002 W UsageFault_Handler
+psf/TP2/out/TP2.elf:1a00119c 0000004c T Chip_Clock_GetRate
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GPIO6_IRQHandler
+psf/TP2/out/TP2.elf:1a0007b8 0000006c T Board_SetupClocking
+psf/TP2/out/TP2.elf:20008000 A __top_RamAHB32
+psf/TP2/out/TP2.elf:1a002374 000002d0 T __udivmoddi4
+psf/TP2/out/TP2.elf:1a0026a0 00000004 T ExtRateIn
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W IntDefaultHandler
+psf/TP2/out/TP2.elf:1a000300 T __CRP_WORD_END__
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GPIO1_IRQHandler
+psf/TP2/out/TP2.elf:1a002950 00000010 T arm_cfft_sR_q15_len256
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W SSP0_IRQHandler
+psf/TP2/out/TP2.elf:1a00c7ac R __exidx_start
+psf/TP2/out/TP2.elf:1a003a40 00001f80 T armBitRevIndexTable_fixed_4096
+psf/TP2/out/TP2.elf:1a0002fc 00000004 T CRP_WORD
+psf/TP2/out/TP2.elf:1a000a8e 0000000e T setStartMode
+psf/TP2/out/TP2.elf:10000000 00000202 D HAbs
+psf/TP2/out/TP2.elf:1a002648 00000048 T __libc_init_array
+psf/TP2/out/TP2.elf:1a0015ec 000000b8 T adcInit
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W ADC1_IRQHandler
+psf/TP2/out/TP2.elf:1a000748 00000030 T Board_Init
+psf/TP2/out/TP2.elf:1a0005d2 00000002 W _init
+psf/TP2/out/TP2.elf:1a001fbc 0000025a T arm_radix4_butterfly_inverse_q15
+psf/TP2/out/TP2.elf:1a000114 T __data_section_table
+psf/TP2/out/TP2.elf:1a00bfd0 000003c0 T armBitRevIndexTable_fixed_512
+psf/TP2/out/TP2.elf:1a002298 000000aa T arm_mult_q15
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W RTC_IRQHandler
+psf/TP2/out/TP2.elf:10000290 B _ebss
+psf/TP2/out/TP2.elf:1a000bc8 0000002a T Chip_ADC_EnableChannel
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W TIMER0_IRQHandler
+psf/TP2/out/TP2.elf:1a000548 00000088 T Reset_Handler
+psf/TP2/out/TP2.elf:1a001544 0000007c T tickInit
+psf/TP2/out/TP2.elf:20010000 A __top_RamAHB_ETB16
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W SPI_IRQHandler
+psf/TP2/out/TP2.elf:1a000874 00000038 T Chip_I2C_SetClockRate
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W LCD_IRQHandler
+psf/TP2/out/TP2.elf:1a000e20 0000004c T Chip_Clock_EnableCrystal
+psf/TP2/out/TP2.elf:1a000b0a 00000008 T Chip_ADC_ReadValue
+psf/TP2/out/TP2.elf:1a0029b0 00000010 T arm_cfft_sR_q15_len4096
+psf/TP2/out/TP2.elf:10008000 A __top_RamLoc32
+psf/TP2/out/TP2.elf:1a00018a 0000001e T data_init
+psf/TP2/out/TP2.elf:1a000b6a 00000020 T Chip_ADC_SetStartMode
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W TIMER1_IRQHandler
+psf/TP2/out/TP2.elf:1a000850 00000024 T Chip_I2C_Init
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W UART2_IRQHandler
+psf/TP2/out/TP2.elf:1a000fdc 0000006c T Chip_Clock_GetMainPLLHz
+psf/TP2/out/TP2.elf:1a002868 000000e6 T gpioPinsInit
+psf/TP2/out/TP2.elf:1a0014f4 0000001a T uartWriteByte
+psf/TP2/out/TP2.elf:1a001370 00000012 T Chip_SSP_SetClockRate
+psf/TP2/out/TP2.elf:1a0019ae 00000016 T gpioToggle
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GPIO2_IRQHandler
+psf/TP2/out/TP2.elf:1a0016a4 00000058 T adcRead
+psf/TP2/out/TP2.elf:1a0010c4 00000026 T Chip_Clock_GetBaseClock
+psf/TP2/out/TP2.elf:10000268 B _bss
+psf/TP2/out/TP2.elf:1a000b12 00000036 T Chip_ADC_ReadStatus
+psf/TP2/out/TP2.elf:1a000b8a 00000032 T Chip_ADC_SetSampleRate
+psf/TP2/out/TP2.elf:1a002980 00000010 T arm_cfft_sR_q15_len1024
+psf/TP2/out/TP2.elf:1a00c738 00000070 T armBitRevIndexTable_fixed_64
+psf/TP2/out/TP2.elf:1a002990 00000010 T arm_cfft_sR_q15_len64
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W I2S1_IRQHandler
+psf/TP2/out/TP2.elf:1a001382 0000003e T Chip_SSP_SetBitRate
+psf/TP2/out/TP2.elf:1a001340 00000002 T Chip_GPIO_Init
+psf/TP2/out/TP2.elf:1a00c3a8 00000180 T twiddleCoef_128_q15
+psf/TP2/out/TP2.elf:1a0026cc 00000004 T OscRateIn
+psf/TP2/out/TP2.elf:1a001478 0000007c T uartInit
+psf/TP2/out/TP2.elf:10000290 ? _end_noinit
+psf/TP2/out/TP2.elf:10008000 A _vStackTop
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W SSP1_IRQHandler
+psf/TP2/out/TP2.elf:1a000178 T __bss_section_table_end
+psf/TP2/out/TP2.elf:1a00c528 00000030 T armBitRevIndexTable_fixed_32
+psf/TP2/out/TP2.elf:1a002218 00000080 T arm_cmplx_mag_squared_q15
+psf/TP2/out/TP2.elf:1a001730 000001ac T gpioInit
+psf/TP2/out/TP2.elf:1a002644 00000002 W __aeabi_ldiv0
+psf/TP2/out/TP2.elf:1a0019c4 0000001c T USB0_IRQHandler
+psf/TP2/out/TP2.elf:1a001168 00000034 T Chip_Clock_Disable
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GPIO3_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W SCT_IRQHandler
+psf/TP2/out/TP2.elf:1a000e88 0000001c T Chip_Clock_GetDividerDivisor
+psf/TP2/out/TP2.elf:1a0002fc T __CRP_WORD_START__
+psf/TP2/out/TP2.elf:1a002690 00000010 T memset
+psf/TP2/out/TP2.elf:1a00017c 00000002 W MemManage_Handler
+psf/TP2/out/TP2.elf:1a0003c4 00000180 T main
+psf/TP2/out/TP2.elf:1a006d80 00000060 T twiddleCoef_32_q15
+psf/TP2/out/TP2.elf:1a009de0 00000030 T twiddleCoef_16_q15
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W WDT_IRQHandler
+psf/TP2/out/TP2.elf:2000c000 A __top_RamAHB16
+psf/TP2/out/TP2.elf:1008a000 A __top_RamLoc40
+psf/TP2/out/TP2.elf:1a000182 00000002 W SVC_Handler
+psf/TP2/out/TP2.elf:1a00144c 00000018 T uartTxReady
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GPIO7_IRQHandler
+psf/TP2/out/TP2.elf:1a0010f8 0000003c T Chip_Clock_EnableOpts
+psf/TP2/out/TP2.elf:1a000ea4 000000b8 T Chip_Clock_GetClockInputHz
+psf/TP2/out/TP2.elf:1a001ca0 T arm_bitreversal_32
+psf/TP2/out/TP2.elf:1a000f5c 00000080 T Chip_Clock_CalcMainPLLValue
+psf/TP2/out/TP2.elf:1a0013f8 00000038 T SystemInit
+psf/TP2/out/TP2.elf:1a006180 00000c00 T twiddleCoef_1024_q15
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W SPIFI_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W QEI_IRQHandler
+psf/TP2/out/TP2.elf:1a000150 T __bss_section_table
+psf/TP2/out/TP2.elf:1a0018dc 0000006a T gpioWrite
+psf/TP2/out/TP2.elf:1a0005d0 00000002 W _fini
+psf/TP2/out/TP2.elf:1a000ab4 00000040 T Chip_ADC_Init
+psf/TP2/out/TP2.elf:1000028c 00000004 B g_pUsbApi
+psf/TP2/out/TP2.elf:1a000780 00000038 T Board_SetupMuxing
+psf/TP2/out/TP2.elf:1a000300 000000c4 T init_cfft_instance
+psf/TP2/out/TP2.elf:1a00096c 000000dc T Chip_UART_SetBaudFDR
+psf/TP2/out/TP2.elf:10000260 00000008 D tickRateMS
+psf/TP2/out/TP2.elf:1a000bf2 00000022 T Chip_ADC_SetBurstCmd
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W ETH_IRQHandler
+psf/TP2/out/TP2.elf:10000000 ? _end_uninit_RESERVED
+psf/TP2/out/TP2.elf:1a001a54 000000c6 T arm_cfft_radix4by2_q15
+psf/TP2/out/TP2.elf:1a001464 00000014 T uartTxWrite
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W CAN0_IRQHandler
+psf/TP2/out/TP2.elf:10000000 D _data
+psf/TP2/out/TP2.elf:10000204 0000001c D header
+psf/TP2/out/TP2.elf:10000290 B _pvHeapStart
+psf/TP2/out/TP2.elf:1a000178 T __section_table_end
+psf/TP2/out/TP2.elf:1a0013c0 00000038 T Chip_SSP_Init
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GINT0_IRQHandler
+psf/TP2/out/TP2.elf:1a002970 00000010 T arm_cfft_sR_q15_len512
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W DAC_IRQHandler
+psf/TP2/out/TP2.elf:1a000724 00000024 T Board_Debug_Init
+psf/TP2/out/TP2.elf:1a000b48 00000022 T Chip_ADC_Int_SetChannelCmd
+psf/TP2/out/TP2.elf:10000268 D _edata
+psf/TP2/out/TP2.elf:1a000830 00000020 T Chip_I2C_EventHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W M0SUB_IRQHandler
+psf/TP2/out/TP2.elf:1a00b6d0 00000300 T twiddleCoef_256_q15
+psf/TP2/out/TP2.elf:1a0011e8 00000158 T Chip_SetupCoreClock
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GPIO0_IRQHandler
+psf/TP2/out/TP2.elf:1a000000 00000040 T g_pfnVectors
+psf/TP2/out/TP2.elf:1a0029e0 000000e0 T armBitRevIndexTable_fixed_128
+psf/TP2/out/TP2.elf:1a000c14 00000014 T SystemCoreClockUpdate
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W DMA_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W EVRT_IRQHandler
+psf/TP2/out/TP2.elf:1b080000 A __top_MFlashB512
+psf/TP2/out/TP2.elf:1a002644 00000002 W __aeabi_idiv0
+psf/TP2/out/TP2.elf:1a00017e 00000002 W BusFault_Handler
+psf/TP2/out/TP2.elf:1a0029d0 00000010 T arm_cfft_sR_q15_len32
+psf/TP2/out/TP2.elf:1a001134 00000034 T Chip_Clock_Enable
+psf/TP2/out/TP2.elf:1a0029a0 00000010 T arm_cfft_sR_q15_len2048
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W UART3_IRQHandler
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W MCPWM_IRQHandler
+psf/TP2/out/TP2.elf:1a001be4 000000bc T arm_cfft_q15
+psf/TP2/out/TP2.elf:1a00c390 00000018 T armBitRevIndexTable_fixed_16
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W M0APP_IRQHandler
+psf/TP2/out/TP2.elf:1a001946 00000068 T gpioRead
+psf/TP2/out/TP2.elf:1a002ac0 00000f80 T armBitRevIndexTable_fixed_2048
+psf/TP2/out/TP2.elf:1a0019e0 00000074 T boardInit
+psf/TP2/out/TP2.elf:1a009ed0 00001800 T twiddleCoef_2048_q15
+psf/TP2/out/TP2.elf:1a000040 000000d4 T g_pfnVendorVectors
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GINT1_IRQHandler
+psf/TP2/out/TP2.elf:1a00b9d0 00000600 T twiddleCoef_512_q15
+psf/TP2/out/TP2.elf:1a0059c0 000007c0 T armBitRevIndexTable_fixed_1024
+psf/TP2/out/TP2.elf:1a00152c 00000018 T tickPowerSet
+psf/TP2/out/TP2.elf:1a00106c 00000058 T Chip_Clock_SetBaseClock
+psf/TP2/out/TP2.elf:1a001430 0000001c T cyclesCounterInit
+psf/TP2/out/TP2.elf:1a0001ba 00000002 W GPIO4_IRQHandler
+psf/TP2/out/TP2.elf:1a000824 0000000c T Board_SystemInit
